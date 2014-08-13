@@ -2,6 +2,10 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/css/style.css')
+    - each asset in assets.main.css
+      link(rel='stylesheet', href= asset)
   body
     block content
+
+    - each asset in assets.main.js
+      script(src= asset)
